@@ -1,7 +1,7 @@
 la notation json
 
 ```json
-	{}
+{}
 ```
 
 Les propriétées d'un objet JSON sont représentées par des paires clés/valeur : 

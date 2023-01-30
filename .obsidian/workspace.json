@@ -12,8 +12,12 @@
             "id": "39720d32c39debf0",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "JSON.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -21,14 +25,18 @@
       {
         "id": "e876ffe0bff64c70",
         "type": "tabs",
-        "dimension": 50.66592674805771,
+        "dimension": 50.665926748057714,
         "children": [
           {
             "id": "6873caeb24f86859",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "mongoDB/Exercices/Ex1 correction.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -97,6 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "JSON.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,6 +122,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "JSON.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +144,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "JSON.md"
+              }
             }
           }
         ]
@@ -154,45 +166,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "floating": {
-    "id": "51725882b031b30f",
-    "type": "floating",
-    "children": [
-      {
-        "id": "30d1a1146694f449",
-        "type": "window",
-        "children": [
-          {
-            "id": "c86123262c781382",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "5623aeb122993c1f",
-                "type": "leaf",
-                "state": {
-                  "type": "empty",
-                  "state": {}
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 1146,
-        "y": 0,
-        "width": 774,
-        "height": 1080,
-        "maximize": false,
-        "zoom": 0
-      }
-    ]
-  },
-  "active": "654b86ac5ef9f85a",
+  "active": "39720d32c39debf0",
   "lastOpenFiles": [
-    "mongoDB/Exercices/Ex1.md",
-    "mongoDB/Exercices/Ex1 correction.md",
     "mongoDB/Lundi.md",
-    "JSON.md",
-    "mongoDB/Lexique.md"
+    "mongoDB/Exercices/Ex1 correction.md",
+    "mongoDB/Exercices/Ex1.md",
+    "mongoDB/Lexique.md",
+    "JSON.md"
   ]
 }
