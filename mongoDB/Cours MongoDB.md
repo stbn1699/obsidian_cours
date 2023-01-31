@@ -1,4 +1,6 @@
-(j'utililse le markdown javascript pour la coloration des requêtes mongo)
+(j'utililse le markdown javascript pour la coloration des requêtes mongo, y compris dans les exercices)
+
+voir [[Lexique MongoDB]]
 
 mongoDB -> système de base de données orienté objet
 
@@ -13,11 +15,11 @@ ___
 voir : [[JSON]]
 
 mongoDB apporte ses propres types a ceux rencontrés au sein du format JSON standard : 
-	- __le type date :__ entier signé de 8 octect représente le nombre de secondes depuis epoch (01/01/1970 00:00:00), le type date ne stocke pas la timezone
-	- __le type ObjectID :__ stocke sur 12 octets, utile en interne afin de garantir l'unicité des identifiants auto-générés par la BDD
-	- __le type NupberLong et NumberInt :__ par défaut, mongoDB considère que toute valeur numérique est un nombre a virgule code sur 8 octets.
-	- __le type NumberDecimal :__ sur 16 octets, le plus précis
-	- __le type BinData :__ pour représenter eds caractères qu'on ne peut pas encoder en Utf-8
+>- __le type date :__ entier signé de 8 octect représente le nombre de secondes depuis epoch (01/01/1970 00:00:00), le type date ne stocke pas la timezone
+>- __le type ObjectID :__ stocke sur 12 octets, utile en interne afin de garantir l'unicité des identifiants auto-générés par la BDD
+>- __le type NupberLong et NumberInt :__ par défaut, mongoDB considère que toute valeur numérique est un nombre a virgule code sur 8 octets.
+> - __le type NumberDecimal :__ sur 16 octets, le plus précis
+>- __le type BinData :__ pour représenter eds caractères qu'on ne peut pas encoder en Utf-8
 
 ___
 
@@ -29,6 +31,7 @@ On peut utiliser `use` pour se connecter a une BDD qui n'existe pas. l'insertion
 use tmp
 db.uneCollection.insert({"key": "value"})
 ```
+/!\ attention, lors d'un insertMany, il est IMPÉRATIF de mettre toutes les valeurs dans des \[crochets\]!! /!\
 
 on peut effectuer la requête :
 
@@ -123,7 +126,7 @@ db.maCollection.find.limit(12)
 
 ___
 
-__Indexation : 
+__Indexation : __
 
 L'indexation simple : 
 
@@ -169,6 +172,8 @@ on peut aussi nommer un index (age_-1 c'est moche):
 db.personnes.createIndex({"age": -1}, {"name": "unJoliNom"})
 ```
 
+exercices : [[index]] et [[index réponses]]
+
 ___
 
 __Tableaux : 
@@ -184,7 +189,7 @@ les opérateurs de tableaux :
 ```js
 { $push: {<champ>: <valeur>, ...} }
 ```
---
+
 exemple : 
 ```js
 db.hobbies.updateOne({"_id": 1}, {$push: {"passions": "Le roller!"}})

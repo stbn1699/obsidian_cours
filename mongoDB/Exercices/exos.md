@@ -1,3 +1,5 @@
+réponses : [[exos réponses]]
+
 Voici la base de donnees qui permet d'effectuer la serie d'exercices :
 
 ```
@@ -140,5 +142,3 @@ Effectuez la suppression d’un seul document avec les critères suivants : le c
 
 Exercice 25 :
 À l’aide de la méthode permettant de trouver un seul document et de le mettre à jour en même temps, réduisez de 15 personnes la capacité de la salle située à Nîmes.
-
-Exercice 1 
