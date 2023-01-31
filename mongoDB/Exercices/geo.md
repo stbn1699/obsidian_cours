@@ -1,6 +1,6 @@
 réponses : [[geo réponses]]
 
-__Exercice 1 __
+__Exercice 1 :__
 
 Modifiez la collection salle afin que soient dorénavant validés les documents destinés à y être insérés ; cette validation aura lieu en mode « strict » et portera sur les champs suivants :
 

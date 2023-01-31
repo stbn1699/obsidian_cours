@@ -213,3 +213,114 @@ exemple :
 ```js
 db.hobbies.updateOne({"_id": 1}, {$push: {"passions": 1}})
 ```
+
+___
+
+__requêtes géospatiales :__
+
+```
+{ type: <type d'objet geoJSON>, coordinates: <coordonnées> }
+```
+
+Le type Point :
+
+```js
+{
+	"type": "Point",
+	"coordinates": [13.0, 1.0]
+}
+```
+
+Le type MultiPoint :
+
+```js
+{
+	"type": "MultiPoint",
+	"coordinates": [
+		[13.0, 1.0],
+		[13.0, 3.0]
+	]
+}
+```
+
+Le type LineString :
+
+```js
+{
+	"type": "LineString",
+	"coordinates": [
+		[13.0, 1.0],
+		[13.0, 3.0]
+	]
+}
+```
+
+Le type Polygon :
+
+```json
+{
+	"type": "Polygon",
+	"coordinates": [
+		[
+			[13.0, 1.0], [13.0, 3.0]
+		]
+		[
+			[12.0, 2.0], [12.0, 4.0]
+		]
+		[
+			[15.0, 5.0], [18.0, 14.0]
+		]
+	]
+}
+```
+on peut aussi avoir des polygon a trous ou des multipolygon; par exemple, si on représente la france et que l'auvergne prend son indépendance il faudra faire un 'trou' dans la france, c'est un polygone a trou. a contrario, la corse qui est pas 'attachée' a la france, a besoin d'un multipolygon pour apparaitre.
+
+
+création d'un index :
+
+```js
+db.avignon.createIndex({"localisation": "2dsphere"})
+
+db.avignon2d.createIndex({"localisation": "2d"})
+```
+
+
+opérateurs:
+
+```json
+{
+	$nearSphere: {
+		$geometry: {
+			type: "Point",
+			coordonates: [<longitude>, <latitude>]
+		}
+		$minDistance: <distance en mètres>,
+		$maxDistance: <distance en mètres>
+	}
+}
+```
+les champs `minDistance` et `maxDistance` sont optionnels
+
+requete sur la collection avignon : 
+```js
+db.avignon.find(
+	{
+		"localisation": {
+			$nearSphere: {
+				$geometry: opera
+			}
+		}
+	},
+	{
+		"_id": 0, "nom": 1
+	}
+)
+```
+
+va retourner les points l'intérêts autour de la variable créée grace a la commande : 
+```js
+var opera = {type: "Point", coordinates: [43.949749, 4.805325]}
+```
+
+
+exercices : [[geo]]
