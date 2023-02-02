@@ -23,17 +23,36 @@ db.employees.insertMany([
 }])
 ```
 
-b.
+__b.__
 ```js
 db.employees.find()
 ```
 
-c.
+__c.__
 ```js
 db.employees.find({"age": {$gt: 33}})
 ```
 
-d.
+__d.__
 ```js
-db.employees.find()
+db.employees.find().sort({"salary": -1})
+```
+
+__e.__
+```js
+db.employees.find({}, {"_id": false, "name": true, "job": true})
+```
+
+__f.__
+```js
+db.employees.aggregate([
+	{
+		$group: {_id: "$job", count: {$sum: 1}}
+	}
+])
+```
+
+__g.__
+```js
+db.employees.update({"job": "Developper"}, {$set:{"salary": 80000}})
 ```

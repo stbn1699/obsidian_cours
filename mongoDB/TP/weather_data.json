@@ -1,0 +1,301 @@
+{
+	"date": {
+		"$date": "2023-01-31T01:00:00+01:00"
+	},
+	"city": "Lyon",
+	"localisation": {
+    	"type": "Point",
+    	"coordinates": [
+        	45.75,
+        	4.85
+      	]
+    },
+	"postalCode": "69",
+	"temperature": 20,
+	"pression": 1100
+}
+{
+	"date": {
+		"$date": "2023-01-31T01:00:00+01:00"
+	},
+	"city": "Paris",
+	"localisation": {
+    	"type": "Point",
+    	"coordinates": [
+        	48.86,
+        	2.33
+      	]
+    },
+	"postalCode": "75",
+	"temperature": 15,
+	"pression": 998
+}
+{
+	"date": {
+		"$date": "2023-01-31T01:00:00+01:00"
+	},
+	"city": "Bordeaux",
+	"localisation": {
+    	"type": "Point",
+    	"coordinates": [
+        	43.83,
+        	-0.56
+      	]
+    },
+	"postalCode": "33",
+	"temperature": 30,
+	"pression": 1059
+}
+
+
+{
+	"date": {
+		"$date": "2023-01-30T01:00:00+01:00"
+	},
+	"city": "Lyon",
+	"localisation": {
+    	"type": "Point",
+    	"coordinates": [
+        	45.75,
+        	4.85
+      	]
+    },
+	"postalCode": "69",
+	"temperature": 20.5,
+	"pression": 1100
+}
+{
+	"date": {
+		"$date": "2023-01-30T01:00:00+01:00"
+	},
+	"city": "Paris",
+	"localisation": {
+    	"type": "Point",
+    	"coordinates": [
+        	48.86,
+        	2.33
+      	]
+    },
+	"postalCode": "75",
+	"temperature": 15.5,
+	"pression": 998
+}
+{
+	"date": {
+		"$date": "2023-01-30T01:00:00+01:00"
+	},
+	"city": "Bordeaux",
+	"localisation": {
+    	"type": "Point",
+    	"coordinates": [
+        	43.83,
+        	-0.56
+      	]
+    },
+	"postalCode": "33",
+	"temperature": 30.5,
+	"pression": 1059
+}
+
+
+
+{
+	"date": {
+		"$date": "2023-02-01T01:00:00+01:00"
+	},
+	"city": "Lyon",
+	"localisation": {
+    	"type": "Point",
+    	"coordinates": [
+        	45.75,
+        	4.85
+      	]
+    },
+	"postalCode": "69",
+	"temperature": 21,
+	"pression": 1101
+}
+{
+	"date": {
+		"$date": "2023-02-01T01:00:00+01:00"
+	},
+	"city": "Paris",
+	"localisation": {
+    	"type": "Point",
+    	"coordinates": [
+        	48.86,
+        	2.33
+      	]
+    },
+	"postalCode": "75",
+	"temperature": 16,
+	"pression": 999
+}
+{
+	"date": {
+		"$date": "2023-02-01T01:00:00+01:00"
+	},
+	"city": "Bordeaux",
+	"localisation": {
+    	"type": "Point",
+    	"coordinates": [
+        	43.83,
+        	-0.56
+      	]
+    },
+	"postalCode": "33",
+	"temperature": 31,
+	"pression": 1060
+}
+
+
+
+{
+	"date": {
+		"$date": "2023-02-02T01:00:00+01:00"
+	},
+	"city": "Lyon",
+	"localisation": {
+    	"type": "Point",
+    	"coordinates": [
+        	45.75,
+        	4.85
+      	]
+    },
+	"postalCode": "69",
+	"temperature": 21.5,
+	"pression": 1101
+}
+{
+	"date": {
+		"$date": "2023-02-02T01:00:00+01:00"
+	},
+	"city": "Paris",
+	"localisation": {
+    	"type": "Point",
+    	"coordinates": [
+        	48.86,
+        	2.33
+      	]
+    },
+	"postalCode": "75",
+	"temperature": 16.5,
+	"pression": 999
+}
+{
+	"date": {
+		"$date": "2023-02-02T01:00:00+01:00"
+	},
+	"city": "Bordeaux",
+	"localisation": {
+    	"type": "Point",
+    	"coordinates": [
+        	43.83,
+        	-0.56
+      	]
+    },
+	"postalCode": "33",
+	"temperature": 31.5,
+	"pression": 1060
+}
+
+
+
+{
+	"date": {
+		"$date": "2022-07-12T01:00:00+01:00"
+	},
+	"city": "Lyon",
+	"localisation": {
+    	"type": "Point",
+    	"coordinates": [
+        	45.75,
+        	4.85
+      	]
+    },
+	"postalCode": "69",
+	"temperature": 34,
+	"pression": 1100
+}
+{
+	"date": {
+		"$date": "2022-07-12T01:00:00+01:00"
+	},
+	"city": "Paris",
+	"localisation": {
+    	"type": "Point",
+    	"coordinates": [
+        	48.86,
+        	2.33
+      	]
+    },
+	"postalCode": "75",
+	"temperature": 35,
+	"pression": 998
+}
+{
+	"date": {
+		"$date": "2022-07-12T01:00:00+01:00"
+	},
+	"city": "Bordeaux",
+	"localisation": {
+    	"type": "Point",
+    	"coordinates": [
+        	43.83,
+        	-0.56
+      	]
+    },
+	"postalCode": "33",
+	"temperature": 32,
+	"pression": 1059
+}
+
+
+{
+	"date": {
+		"$date": "2022-07-13T01:00:00+01:00"
+	},
+	"city": "Lyon",
+	"localisation": {
+    	"type": "Point",
+    	"coordinates": [
+        	45.75,
+        	4.85
+      	]
+    },
+	"postalCode": "69",
+	"temperature": 34.5,
+	"pression": 1100
+}
+{
+	"date": {
+		"$date": "2022-07-13T01:00:00+01:00"
+	},
+	"city": "Paris",
+	"localisation": {
+    	"type": "Point",
+    	"coordinates": [
+        	48.86,
+        	2.33
+      	]
+    },
+	"postalCode": "75",
+	"temperature": 35.5,
+	"pression": 998
+}
+{
+	"date": {
+		"$date": "2022-07-13T01:00:00+01:00"
+	},
+	"city": "Bordeaux",
+	"localisation": {
+    	"type": "Point",
+    	"coordinates": [
+        	43.83,
+        	-0.56
+      	]
+    },
+	"postalCode": "33",
+	"temperature": 32.5,
+	"pression": 1059
+}

@@ -28,7 +28,11 @@ Exercice 9 :
 `db.salles.find({"avis.note": {$gte: 8}, "avis.note": {$lte: 10}}, {"name": true})`
 
 Exercice 10 : 
-db.salles.find({"avis.date": {$gte: }})
+`db.salles.find({"avis.date": {$gte: ISODate("2019-11-15")}})`
 
 Exercice 11 : 
-db.salle.find({"_id" : })
+```
+db.salle.aggregate([
+	{$mutiply: ["$_id", 100]}
+])
+```

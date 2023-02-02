@@ -102,6 +102,8 @@ db.personnes.updateOne(
 
 ___
 
+### La méthode find :
+
 les méthodes find et findOne ont la même signature et permettent d'effectuer des requêtes mongoDB
 
 ```js
@@ -126,7 +128,7 @@ db.maCollection.find.limit(12)
 
 ___
 
-__Indexation : __
+### L'indexation :
 
 L'indexation simple : 
 
@@ -176,7 +178,7 @@ exercices : [[index]] et [[index réponses]]
 
 ___
 
-__Tableaux : 
+### Les tableaux :
 
 db: `db.hobbies.insertMany([   {"_id": 1, "nom": "Yves"},   {"_id": 2, "nom": "Sandra", "passions": []},   {"_id": 3, "nom": "Line", "passions": ["Théâtre"]}  ])`
 
@@ -216,7 +218,7 @@ db.hobbies.updateOne({"_id": 1}, {$push: {"passions": 1}})
 
 ___
 
-__requêtes géospatiales :__
+### Requêtes géospatiales :
 
 ```
 { type: <type d'objet geoJSON>, coordinates: <coordonnées> }
@@ -323,4 +325,175 @@ var opera = {type: "Point", coordinates: [43.949749, 4.805325]}
 ```
 
 
+l'opétareur `$geoWithin` :
+cet opérateur n'effectue aucun tri et ne nédessite pas la créaion d'un index géospatial
+```js
+{
+	<champ des documents contenant les coordonnées> : {
+		$geoWithin: {
+			<opérateur de forme>: <coordonnées>
+		}
+	}
+}
+```
+
+création d'un polygone pour notre exemple : 
+
+```js
+var polygone = [
+	[43.9548, 4.80143],
+	[43.95475, 4.80779],
+	[43.95045, 4.81097],
+	[43.4657, 4.80449],
+	[43.9548, 4.80143]
+]
+```
+
+la requête suivante utilise ce polygone : 
+
+```js
+db.avignon2d.find(
+	{
+		"locaisation": {
+			$geoWithin: {
+				$polygon: polygone
+			}
+		}
+	},
+	{"_id": 0, "nom": 1}
+)
+```
+
+signature pour le cas d'utilisation d'objets GeoJSON:
+
+```js
+{
+	<champ des documents contenant les coordonnées> : {
+		$geoWithin: {
+			type: <"Polygon" ou bien "MultiPolygon">,
+			coordinates: [<coordonnées>]
+		}
+	}
+}
+```
+
+```js
+db.avignon2d.find(
+	{
+		"locaisation": {
+			$geoWithin: {
+				$geometry: {
+					type: "polygon",
+					coordinates: [polygone]
+				}
+			}
+		}
+	}, {"_id": 0, "nom": 1})
+```
+
 exercices : [[geo]]
+
+___
+
+### Le framework d'agrégation :
+
+MongoDB met a disposition un puissant outil d'analyse et de traitement de l'information: le pipeline d'agregation (ou framework)
+
+Métaphore du tapis roulant d'usine
+
+Méthode utilisée:
+
+```js
+db.collecition.aggregate(pipeline, options)
+```
+
+> - pipeline : désigne un tableau d'étapes
+> - options : désigne un document
+
+Parmis les options, nous retiendrons :
+> - collation : permet d'affecter une collation a l'opération d'agregation
+> - bypassDocumentValidation : fonctionne avec un opérateur appelé $out et permet de passer au travers de la validation des documents.
+> -  allowDiskUse: donne la possibilire de faire déborder les opérations d'écriture sur le disque 
+
+vous pouvez appeler aggregate sans argument :
+
+```js
+db.collection.aggregate()
+```
+
+au sein d'un shell, nous allons créer une variable pipeline :
+
+```js
+var pipeline = []
+db.personnes.aggregate(pipeline)
+db.personnes.aggregate(
+	pipeline,
+	{
+		"collation": {
+			"locale": "fr"
+		}
+	}
+)
+```
+
+___
+
+### Le filtrage :
+
+Avec `$match`, il permet d'obstenir des pipelines performants avec des temps d'execution courts.
+Normalement, `$match` doit intervenir le plus en amont possible dans le pipeline car il agit comme un filtre en réduisant le nombre de documents a traiter plus en aval dans le pipeline (dans l'idéal, on devrait le trouver comme premier opérateur).
+
+La syntaxe est la suivante :
+```js
+{$match: {<requête>}}
+```
+
+
+Exemple: 
+
+```js
+var pipeline = [{
+	$match : {
+		"intérêts": "jardinage"
+	}
+}]
+
+db.personnes.aggregate(pipeline)
+```
+
+Cela correcpond a la requête : 
+
+```js
+db.personnes.find({"intérêts": "jardinage"})
+```
+
+___
+
+### Selection/modification de champs
+
+Avec `$project`
+
+Syntaxe : 
+```js
+{$project: {<spec>}}
+```
+
+on l'utilise dans un exemple : 
+```js
+var pipeline = [{
+	$match: {
+		"intérêts": "jardinage"
+	}
+},{
+	$project: {
+		"_id": 0,
+		"nom": 1,
+		"prenom": 1,
+		"super_senior": {$gte: ["$age", 70]},
+	}
+},{
+	$matsch: {
+		"super_senior": true
+	}
+}}]
+```
